@@ -1,0 +1,39 @@
+body {
+  background: linear-gradient(to right, #0074d9, #2ecc40);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+h1 {
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+  font-family: "VT323", monospace;
+  font-size: 40px;
+}
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+}
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.result {
+  text-align: center;
+  color: white;
+  margin: 20px 50px; /* Added margin on both sides */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+}
