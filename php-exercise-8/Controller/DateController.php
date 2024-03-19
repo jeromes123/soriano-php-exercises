@@ -1,6 +1,6 @@
 <?php
-include "Model/DateModel.php";
-
+namespace Controller;
+use Model\DateModel;
 class DateController
 {
     public $model;
