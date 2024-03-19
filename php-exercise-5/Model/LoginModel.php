@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 class LoginModel
 {
     public function validate($username, $password)
@@ -10,7 +11,7 @@ class LoginModel
         }
 
         if (strlen($username) < 6) {
-            
+
             return "Username must be at least 6 characters.";
         }
 

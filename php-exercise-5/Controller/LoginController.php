@@ -1,16 +1,18 @@
 <?php
-include "Model/LoginModel.php";
+namespace Controller;
+
+use Model\LoginModel;
 
 class LoginController
 {
     public $model;
 
-    public function __construct()
+    function __construct()
     {
         $this->model = new LoginModel();
     }
 
-    public function render()
+    function render()
     {
         if (isset($_POST["submit"])) {
             $controller = new LoginController();
