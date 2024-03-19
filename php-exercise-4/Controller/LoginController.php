@@ -1,5 +1,7 @@
 <?php
-include "Model/LoginModel.php";
+namespace Controller;
+
+use Model\LoginModel;
 
 class LoginController
 {

@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 class LoginModel
 {
     function validate($username, $password)
