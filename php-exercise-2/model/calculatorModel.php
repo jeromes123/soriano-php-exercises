@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 class CalculatorModel
 {
     public function calculate($a, $b, $operation)
