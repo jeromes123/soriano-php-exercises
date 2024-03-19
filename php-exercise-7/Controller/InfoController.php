@@ -1,6 +1,6 @@
 <?php
-include "Model/InfoModel.php";
-
+namespace Controller;
+use Model\InfoModel;
 class InfoController
 {
     public $model;
@@ -8,14 +8,5 @@ class InfoController
     public function __construct()
     {
         $this->model = new InfoModel();
-    }
-
-    public function render()
-    {
-        if (isset($_POST['submit'])) {
-            $controller = new InfoController();
-            $result = $controller->model->displayInfo($_POST['name'], $_POST['email'], $_POST['message']);
-        }
-        include "View/InfoView.php";
     }
 }

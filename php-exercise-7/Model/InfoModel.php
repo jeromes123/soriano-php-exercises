@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 class InfoModel
 {
     public function displayInfo($name, $email, $message)
