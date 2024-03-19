@@ -1,28 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+namespace View;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Exercise 10</title>
-</head>
+use Controller\FileController;
 
-<body>
-    <div class="container">
-        <h1>Update a file</h1>
-        <label for="newFileName">Files in Directory:</label>
-        <br>
-        <?php
+class FileUpdateView {
+    public $controller;
+
+    public function __construct() {
+        $this->controller = new FileController();
+    }
+
+    public function render() {
+        echo <<<html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <title>Exercise 10</title>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Update a file</h1>
+                <label for="newFileName">Files in Directory:</label>
+                <br>
+        html;
+
         echo "<ul>";
+        $fileList = $this->controller->model->listFiles();
         foreach ($fileList as $file) {
             echo '<li>' . $file . '</li>';
         }
         echo "</ul>";
-        ?>
-        <br>
-        <hr>
-        <?php
+
+        echo "<br>";
+        echo "<hr>";    
+
         if (!isset($_POST['getContent'])) {
             echo '<br>';
             echo '<hr>';
@@ -55,12 +69,11 @@
             echo '<br>';
         }
 
-        if(isset($message))
-        {
-            echo $message;
+        if(isset($_POST['update'])) {
+            $this->controller->model->updateFile($_POST['fileName'], $_POST['fileContent']);
+            echo "File Updated!";
         }
-        ?>   
-    </div>
-</body>
 
-</html>
+        echo "</div></body></html>";
+    }
+}

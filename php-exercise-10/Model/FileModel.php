@@ -1,4 +1,6 @@
 <?php
+namespace Model;
+
 class FileModel
 {
     public function createFile($newFileName, $fileContent)
@@ -15,8 +17,15 @@ class FileModel
 
     public function readFile($filename)
     {
-        $file = fopen($filename, "r");
-        return $file;
+        $filePath = "files/" . $filename;
+        if (file_exists($filePath)) {
+            $file = fopen($filePath, "r");
+            $fileContent = fread($file, filesize($filePath));
+            fclose($file);
+            return $fileContent;
+        } else {
+            return false;
+        }
     }
 
     public function deleteFile($fileName)
