@@ -1,4 +1,6 @@
 <?php
+namespace Model;
+
 class FibonacciModel
 {
     public function createSequence($firstN)

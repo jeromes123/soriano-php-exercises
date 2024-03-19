@@ -1,5 +1,7 @@
 <?php
-require "Model/FibonacciModel.php";
+namespace Controller;
+
+use Model\FibonacciModel;
 
 class FibonacciController
 {
@@ -10,16 +12,12 @@ class FibonacciController
         $this->model = new FibonacciModel();
     }
 
-    public function render()
+    public function getSequence($input)
     {
-        if (isset($_POST['input'])) {
-            $controller = new FibonacciController();
-            $sequence = $controller->model->createSequence($_POST['input']);
-            $result = '<div class="result">';
-            $result .= 'Fibonacci Sequence: ' . implode(', ', $sequence);
-            $result .= '</div>';
-        }
-        include "View/FibonacciView.php";
+        $sequence = $this->model->createSequence($input);
+        $result = '<div class="result">';
+        $result .= 'Fibonacci Sequence: ' . implode(', ', $sequence);
+        $result .= '</div>';
+        return $result;
     }
-
 }
