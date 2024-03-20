@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 87, 51, 0.8),
+      rgba(255, 195, 0, 0.8)
+    ),
+    url("background-image.jpg"); /* Red to orange linear gradient with glass effect */
+  background-blend-mode: overlay; /* Overlay blend mode for the background */
+  background-size: cover;
+  background-position: center;
+}
+
+form {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent white background for the form */
+}
+
+table {
+  width: 100%;
+}
+
+table td {
+  padding: 5px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #ff5733; /* Red button background */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+input[type="submit"]:hover {
+  background-color: #ff4500; /* Darker orange on hover */
+}
+
+h1 {
+  text-align: center;
+  color: #fff; /* White text */
+  margin-bottom: 20px; /* Add space between form and heading */
+}
