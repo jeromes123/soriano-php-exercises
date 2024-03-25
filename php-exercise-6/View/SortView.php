@@ -2,14 +2,13 @@
 namespace View;
 
 use Controller\SortController;
-// Import SortModel as it is used in the constructor
 
 class SortView
 {
     public $controller;
     public function __construct()
     {
-        $this->controller = new SortController(); // Correct the assignment of $this->controller
+        $this->controller = new SortController();
     }
 
     public function render()
@@ -21,7 +20,7 @@ class SortView
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Exercise 6</title>
-                <!--<link rel="stylesheet" href="style.css"> ChatGPT Design-->
+                <link rel="stylesheet" href="style.css">
             </head>
             <body>
                 <h1>Exercise 6</h1>
@@ -42,7 +41,7 @@ class SortView
 
         if (isset($_POST['submit'])) {
             $result = implode(", ", $this->controller->model->sort($_POST['numbers']));
-            echo $result; // Corrected echo statement to display the result variable
+            echo $result; 
         }
 
         echo <<<html
